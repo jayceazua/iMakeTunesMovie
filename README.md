@@ -8,4 +8,4 @@
 2. ```$ cd iMakeTunesMovie```
 3. run ```$ npm install``` on the command line
 4. If you have nodemon installed on the command line run ```$ nodemon```
-5. If you do not run ```$ node server.js```
+5. If you do not have nodemon, run ```$ node server.js``` from the root.
