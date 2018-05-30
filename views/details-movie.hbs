@@ -1,13 +1,37 @@
+<h2>{{iMovie.im:name.label}}</h2>
+
+<div class="row">
+    <div class="col">
+      <img class="" src="{{iMovie.im:image.[2].label}}" alt="{{iMovie.im:name.label}}">
+    </div>
+    <div class="col">
+      <p class="">Purchase Price: {{iMovie.im:price.label}}</p>
+      <p class="">Release Date: {{iMovie.im:releaseDate.attributes.label}}</p>
+      <a href="{{iMovie.id.label}}" class="btn btn-info">Download on iTunes</a>
+    </div>
+</div>
+<br>
 <div class="row">
   <div class="col-md-12">
-    <img class="" src="{{iMovie.im:image.[2].label}}" alt="{{iMovie.im:name.label}}">
-    <h2>{{iMovie.im:name.label}}</h2>
-    <p class="card-text">{{iMovie.summary.label}}</p>
-    <p class="card-text">Purchase Price: {{iMovie.im:price.label}}</p>
-    <p class="card-text">Release Date: {{iMovie.im:releaseDate.attributes.label}}</p>
     <video width="800" controls>
-  <source src="{{iMovie.link.[1].attributes.href}}" rel="{{iMovie.link.[1].attributes.rel}}" type="{{iMovie.link.[1].attributes.type}}">
+      <source src="{{iMovie.link.[1].attributes.href}}" rel="{{iMovie.link.[1].attributes.rel}}" type="{{iMovie.link.[1].attributes.type}}">
   Your browser does not support HTML5 video.
-</video>
+    </video>
   </div>
 </div>
+<br>
+<a href="/" class="btn btn-danger">Back</a>
+
+
+<!--
+Element Step 1.
+<a onclick="return its.detect.openItunes('https://itunes.apple.com/us/movie/braven/id1336319469');"
+   href="#" class="action view-in-itunes"><span>View in iTunes</span></a>
+
+
+
+
+
+
+
+ -->
