@@ -14,4 +14,4 @@
 #### Number Hours Spent: ```2 hours and 40 minutes almost 3 hours```
 ***
 #### Notes
-> I tried to locate the link for the iTunes Store link of the individual movies
+I tried to locate the link for the iTunes Store link of the individual movies
