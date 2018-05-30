@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 app.get('/:id', (req, res) => {
   let movieId = req.params.id;
   // Could use refactoring to keep my code DRY
-  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
+  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=25/json';
   https.get(iMovies, (response) => {
     let data = '';
     response.on('data', (chunk) => {
