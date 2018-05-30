@@ -1,0 +1,15 @@
+{
+  "name": "iMakeTunesMovie",
+  "version": "1.0.0",
+  "description": "Displays the top 25 movies from iTunes.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jayce Azua || jayce.azua@students.makeschool.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
