@@ -23,9 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
   https.get(iMovies, (response) => {
+    // The stream of data will be stored in the data variable
     let data = '';
     // A chunk of data has been recieved.
     response.on('data', (chunk) => {
+
       data += chunk;
     });
     // The whole response has been received. Print out the result.
@@ -34,6 +36,7 @@ app.get('/', (req, res) => {
       res.render('home', {iMovies: parsedData});
     });
   }).on("error", (err) => {
+    // If there is an error it will catch it and display the error on our console
     console.log("Error: " + err.message);
   });
 });
