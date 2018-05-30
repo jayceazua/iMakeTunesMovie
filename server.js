@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
-  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=25/json';
+  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
   https.get(iMovies, (response) => {
     let data = '';
     // A chunk of data has been recieved.
@@ -39,7 +39,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:id', (req, res) => {
-  res.render('movie-details');
+  let movieId = req.params.id;
+  // Could use refactoring to keep my code DRY
+  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
+  https.get(iMovies, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+    response.on('end', () => {
+      let parsedData = JSON.parse(data).feed.entry[movieId]
+      res.render('details-movie', {iMovie: parsedData});
+    });
+  }).on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
 });
 
 
