@@ -33,11 +33,13 @@ app.get('/', (req, res) => {
       let parsedData = JSON.parse(data).feed.entry
       res.render('home', {iMovies: parsedData});
     });
-
   }).on("error", (err) => {
     console.log("Error: " + err.message);
   });
+});
 
+app.get('/:id', (req, res) => {
+  res.render('movie-details');
 });
 
 

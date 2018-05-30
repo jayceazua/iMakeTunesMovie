@@ -1,3 +1,17 @@
-{{#each iMovies}}
-  <h3>{{this.im:name.label}}</h3>
-{{/each}}
+<div class="row">
+
+    {{#each iMovies}}
+    <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+      <div class="card" style="width: 14rem;">
+        <img class="card-img-top img-thumbnail" src="{{this.im:image.[2].label}}" alt="{{this.im:name.label}}">
+        <div class="card-body">
+          <h5 class="card-title">{{this.im:name.label}}</h5>
+          <p class="card-text">Purchase Price: {{this.im:price.label}}</p>
+          <p class="card-text">Release Date: {{this.im:releaseDate.attributes.label}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      </div>
+    {{/each}}
+
+</div>
