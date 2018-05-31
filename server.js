@@ -18,10 +18,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
+let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
 
 // Routes
 app.get('/', (req, res) => {
-  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=28/json';
   https.get(iMovies, (response) => {
     // The stream of data will be stored in the data variable
     let data = '';
@@ -44,7 +44,6 @@ app.get('/', (req, res) => {
 app.get('/:id', (req, res) => {
   let movieId = req.params.id;
   // Could use refactoring to keep my code DRY
-  let iMovies = 'https://itunes.apple.com/us/rss/topmovies/limit=25/json';
   https.get(iMovies, (response) => {
     let data = '';
     response.on('data', (chunk) => {
